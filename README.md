@@ -1,20 +1,28 @@
- HEAD
- React + Vite
+AI Chat App (React + Gemini API)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive AI-powered chat application built using React and Google Gemini API.  
+This project provides a modern, responsive, and real-time chat interface where users can interact with an AI assistant.
 
-Currently, two official plugins are available:
+ Features
+ 
+- AI-powered responses using Google Gemini API
+- Real-time chat interface
+- Fully responsive UI (mobile + desktop)
+- Fast and smooth performance
+- Smart prompt-based AI interaction
+-Clean and modern UI design
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+ Tech Stack
+ 
+- React (Vite)
+- JavaScript (ES6+)
+- Tailwind CSS
+- Google Gemini API
 
- React Compiler
+ How to Run
+ 
+2. Install dependencies
+npm install
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-
- React-Chat-App
- 1a3f1a46b5e5d6b8cde060e1eefe4225ab292629
+3. Run project
+npm run dev
