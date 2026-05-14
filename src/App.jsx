@@ -3,8 +3,8 @@ import Sidebar from "./components/Sidebar";
 import ChatBox from "./components/ChatBox";
 import DSAHelp from "./components/DSAHelp";
 import PlacementPlan from "./components/PlacementPlan";
-import YoutubeResources from "./components/YoutubeResources";
-import ExamPreparation from "./components/ExamPreparation";
+import YouTubeResources from "./components/YouTubeResources";
+import Exampreparation from "./components/Exampreparation";
 
 const STORAGE_KEY = "chat_history";
 
@@ -106,9 +106,9 @@ export default function App() {
       case "placement":
         return <PlacementPlan />;
       case "youtube":
-        return <YoutubeResources />;
+        return <YouTubeResources />;
       case "exam":
-        return <ExamPreparation />;
+        return <Exampreparation />;
       default:
         return <ChatBox chat={currentChat} addMessage={addMessage} />;
     }
