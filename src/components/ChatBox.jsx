@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { askGemini } from "../services/api";
+import ReactMarkdown from "react-markdown";
 
 export default function ChatBox({ chat, addMessage }) {
   const bottomRef = useRef(null);
@@ -58,16 +59,14 @@ export default function ChatBox({ chat, addMessage }) {
     <div className="flex-1 overflow-y-auto p-4">
 
       {chat.messages.length === 0 ? (
-        /* ✅ WELCOME SCREEN */
         <div className="flex flex-col items-center justify-center h-full text-center text-gray-400">
-          
           <h1 className="text-3xl font-bold mb-2">
             What do you want to prepare today?
           </h1>
-          </div>
+        </div>
       ) : (
-        /* ✅ CHAT UI */
         <div className="space-y-3">
+
           {chat.messages.map((msg, i) => (
             <div
               key={i}
@@ -77,22 +76,28 @@ export default function ChatBox({ chat, addMessage }) {
                   : "bg-gray-300 text-black"
               }`}
             >
-              {msg.text}
+              {msg.role === "ai" ? (
+                <ReactMarkdown>{msg.text}</ReactMarkdown>
+              ) : (
+                msg.text
+              )}
             </div>
           ))}
 
           {loading && (
             <div className="bg-gray-300 text-black p-3 rounded-lg w-fit">
+              Thinking...
             </div>
           )}
 
           <div ref={bottomRef} />
+
         </div>
       )}
 
     </div>
 
-    {/* INPUT ALWAYS VISIBLE */}
+    {/* INPUT AREA */}
     <div className="p-3 flex gap-2 border-gray-700">
 
       <input
