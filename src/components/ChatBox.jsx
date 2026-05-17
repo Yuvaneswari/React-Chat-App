@@ -7,6 +7,9 @@ export default function ChatBox({ chat, addMessage }) {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
 
+  
+  const [useMarkdown, setUseMarkdown] = useState(true);
+
   // Auto scroll
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -32,91 +35,103 @@ export default function ChatBox({ chat, addMessage }) {
     setLoading(false);
   };
 
-  // Send message (buttons)
-  const sendMessageWithText = async (text) => {
-    if (!text.trim()) return;
-
-    addMessage(text, "user");
-    setLoading(true);
-
-    try {
-      const reply = await askGemini(text);
-      addMessage(reply, "ai");
-    } catch (err) {
-      addMessage("Error getting response", "ai");
-    }
-
-    setLoading(false);
-  };
-
-  // No chat selected
   if (!chat) return <div className="p-4"></div>;
 
- return (
-  <div className="flex flex-col h-full">
+  return (
+    <div className="flex flex-col h-full bg-gray-50">
 
-    {/* MESSAGES AREA */}
-    <div className="flex-1 overflow-y-auto p-4">
+      {/* HEADER TOGGLE */}
+      <div className="p-2 border-b flex justify-between items-center bg-white">
+        <h2 className="font-semibold text-black">AI Chat</h2>
 
-      {chat.messages.length === 0 ? (
-        <div className="flex flex-col items-center justify-center h-full text-center text-gray-400">
-          <h1 className="text-3xl font-bold mb-2">
-            What do you want to prepare today?
-          </h1>
-        </div>
-      ) : (
-        <div className="space-y-3">
+       <button
+  onClick={() => setUseMarkdown(!useMarkdown)}
+  className={`text-xs px-3 py-1 border rounded transition
+    ${
+      useMarkdown
+        ? "bg-blue-600 text-white hover:bg-black-700"
+        : "bg-blue-600 text-white hover:bg-gray-700"
+    }`}
+>
+  {useMarkdown ? "Disable Formatting" : "Enable Formatting"}
+</button>
+</div>
 
-          {chat.messages.map((msg, i) => (
-            <div
-              key={i}
-              className={`p-3 rounded-lg max-w-md ${
-                msg.role === "user"
-                  ? "ml-auto bg-blue-600 text-white"
-                  : "bg-gray-300 text-black"
-              }`}
-            >
-              {msg.role === "ai" ? (
-                <ReactMarkdown>{msg.text}</ReactMarkdown>
-              ) : (
-                msg.text
-              )}
-            </div>
-          ))}
+      {/* MESSAGES */}
+      <div className="flex-1 overflow-y-auto p-4 space-y-4">
 
-          {loading && (
-            <div className="bg-gray-300 text-black p-3 rounded-lg w-fit">
-              Thinking...
-            </div>
-          )}
+        {chat.messages.length === 0 ? (
+          <div className="text-center text-gray-400 mt-20">
+            <h1 className="text-xl font-bold">
+              Start your conversation by asking a question!
+            </h1>
+          </div>
+        ) : (
+          <>
+            {chat.messages.map((msg, i) => (
+              <div
+                key={i}
+                className={`flex ${
+                  msg.role === "user" ? "justify-end" : "justify-start"
+                }`}
+              >
+                <div
+                  className={`px-4 py-3 max-w-[75%] text-sm rounded-2xl shadow-md break-words leading-relaxed ${
+                    msg.role === "user"
+                      ? "bg-blue-600 text-white rounded-br-none"
+                      : "bg-white text-black border rounded-bl-none"
+                  }`}
+                >
+                  {/* ✅ DYNAMIC MARKDOWN CONTROL */}
+                  {msg.role === "ai" ? (
+                    useMarkdown ? (
+                      <ReactMarkdown>{msg.text}</ReactMarkdown>
+                    ) : (
+                      <pre className="whitespace-pre-wrap font-sans">
+                        {msg.text}
+                      </pre>
+                    )
+                  ) : (
+                    msg.text
+                  )}
+                </div>
+              </div>
+            ))}
 
-          <div ref={bottomRef} />
+            {/* LOADING */}
+            {loading && (
+              <div className="flex justify-start">
+                <div className="px-4 py-2 bg-gray-200 text-black rounded-2xl">
+                  loading
+                </div>
+              </div>
+            )}
 
-        </div>
-      )}
+            <div ref={bottomRef} />
+          </>
+        )}
+      </div>
+
+      {/* INPUT */}
+      <div className="p-3 border-t flex gap-2 bg-white">
+
+        <input
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && sendMessage()}
+          placeholder="Ask anything..."
+          className="flex-1 p-3 rounded-xl border text-black focus:outline-none focus:ring-2 focus:ring-blue-400"
+        />
+
+        <button
+          onClick={sendMessage}
+          className="bg-blue-600 text-white px-5 rounded-xl hover:bg-blue-700"
+        >
+          Send
+        </button>
+
+      </div>
 
     </div>
-
-    {/* INPUT AREA */}
-    <div className="p-3 flex gap-2 border-gray-700">
-
-      <input
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        onKeyDown={(e) => e.key === "Enter" && sendMessage()}
-        placeholder="Ask anything"
-        className="flex-1 p-2 rounded bg-gray-800 text-white outline-none"
-      />
-
-      <button
-        onClick={sendMessage}
-        className="bg-blue-600 text-white px-4 rounded hover:bg-blue-700"
-      >
-        Send
-      </button>
-
-    </div>
-
-  </div>
- );
+  );
 }

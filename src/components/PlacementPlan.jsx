@@ -1,175 +1,223 @@
 export default function PlacementPlan() {
 
-  // 🔥 DSA TOPICS
-  const dsaTopics = [
-    {
-      name: "Arrays & Strings",
-      link: "https://www.youtube.com/results?search_query=arrays+and+strings+dsa+full+course"
-    },
-    {
-      name: "Sliding Window",
-      link: "https://www.youtube.com/results?search_query=sliding+window+pattern+dsa"
-    },
-    {
-      name: "Binary Search",
-      link: "https://www.youtube.com/results?search_query=binary+search+algorithm+full+course"
-    },
-    {
-      name: "Recursion & Backtracking",
-      link: "https://www.youtube.com/results?search_query=recursion+backtracking+dsa"
-    },
-    {
-      name: "Linked List, Stack, Queue",
-      link: "https://www.youtube.com/results?search_query=linked+list+stack+queue+dsa"
-    },
-    {
-      name: "Dynamic Programming",
-      link: "https://www.youtube.com/results?search_query=dynamic+programming+dsa+full+course"
-    }
-  ];
+  // 🔥 FULL ROADMAP (DYNAMIC + STRUCTURED)
+  const roadmap = {
+    Aptitude: {
+      "Quantitative Aptitude": [
+        {
+          name: "Percentages",
+          link: "https://www.youtube.com/results?search_query=percentage+aptitude+tricks"
+        },
+        {
+          name: "Profit & Loss",
+          link: "https://www.youtube.com/results?search_query=profit+and+loss+aptitude"
+        },
+        {
+          name: "Time & Work",
+          link: "https://www.youtube.com/results?search_query=time+and+work+aptitude"
+        },
+        {
+          name: "Time, Speed & Distance",
+          link: "https://www.youtube.com/results?search_query=speed+time+distance+aptitude"
+        },
+        {
+          name: "Simple & Compound Interest",
+          link: "https://www.youtube.com/results?search_query=compound+interest+aptitude"
+        },
+        {
+          name: "Ratio & Proportion",
+          link: "https://www.youtube.com/results?search_query=ratio+proportion+aptitude"
+        }
+      ],
 
-  // 📊 APTITUDE
-  const aptitudeTopics = [
-    {
-      name: "Percentages & Profit/Loss",
-      link: "https://www.youtube.com/results?search_query=aptitude+percentage+profit+loss"
-    },
-    {
-      name: "Time & Work",
-      link: "https://www.youtube.com/results?search_query=time+and+work+aptitude"
-    },
-    {
-      name: "Time, Speed & Distance",
-      link: "https://www.youtube.com/results?search_query=speed+time+distance+aptitude"
-    },
-    {
-      name: "Probability & Permutation",
-      link: "https://www.youtube.com/results?search_query=probability+permutation+aptitude"
-    },
-    {
-      name: "Data Interpretation",
-      link: "https://www.youtube.com/results?search_query=data+interpretation+aptitude"
-    }
-  ];
+      "Logical Reasoning": [
+        {
+          name: "Number Series",
+          link: "https://www.youtube.com/results?search_query=number+series+reasoning"
+        },
+        {
+          name: "Coding-Decoding",
+          link: "https://www.youtube.com/results?search_query=coding+decoding+reasoning"
+        },
+        {
+          name: "Blood Relations",
+          link: "https://www.youtube.com/results?search_query=blood+relation+reasoning"
+        },
+        {
+          name: "Syllogism",
+          link: "https://www.youtube.com/results?search_query=syllogism+reasoning"
+        },
+        {
+          name: "Direction Sense",
+          link: "https://www.youtube.com/results?search_query=direction+sense+reasoning"
+        },
+        {
+          name: "Seating Arrangement",
+          link: "https://www.youtube.com/results?search_query=seating+arrangement+reasoning"
+        }
+      ],
 
-  // 🖥 CORE SUBJECTS
-  const coreSubjects = [
-    {
-      name: "Operating Systems",
-      link: "https://www.youtube.com/results?search_query=operating+system+full+course"
+      "Verbal Ability": [
+        {
+          name: "Reading Comprehension",
+          link: "https://www.youtube.com/results?search_query=reading+comprehension+verbal+ability"
+        },
+        {
+          name: "Synonyms & Antonyms",
+          link: "https://www.youtube.com/results?search_query=synonyms+antonyms+english"
+        },
+        {
+          name: "Sentence Correction",
+          link: "https://www.youtube.com/results?search_query=sentence+correction+english"
+        },
+        {
+          name: "Fill in the Blanks",
+          link: "https://www.youtube.com/results?search_query=fill+in+the+blanks+english"
+        },
+        {
+          name: "Para Jumbles",
+          link: "https://www.youtube.com/results?search_query=para+jumbles+english"
+        }
+      ]
     },
-    {
-      name: "DBMS (SQL, Normalization)",
-      link: "https://www.youtube.com/results?search_query=dbms+sql+normalization+full+course"
-    },
-    {
-      name: "Computer Networks",
-      link: "https://www.youtube.com/results?search_query=computer+networks+full+course"
-    },
-    {
-      name: "OOP Concepts (Java/C++)",
-      link: "https://www.youtube.com/results?search_query=oop+concepts+java+cpp+full+course"
-    }
-  ];
 
-  // 🤖 AI TOOLS
-  const aiTools = [
-    {
-      name: "ChatGPT / Gemini API",
-      link: "https://www.youtube.com/results?search_query=gemini+api+chatgpt+api+tutorial"
-    },
-    {
-      name: "Hugging Face Models",
-      link: "https://www.youtube.com/results?search_query=huggingface+transformers+tutorial"
-    },
-    {
-      name: "GitHub Copilot",
-      link: "https://www.youtube.com/results?search_query=github+copilot+tutorial"
-    },
-    {
-      name: "Perplexity AI",
-      link: "https://www.youtube.com/results?search_query=perplexity+ai+tutorial"
-    }
-  ];
+    DSA: [
+      {
+        name: "Arrays & Strings",
+        link: "https://www.youtube.com/results?search_query=arrays+and+strings+dsa+full+course"
+      },
+      {
+        name: "Sliding Window",
+        link: "https://www.youtube.com/results?search_query=sliding+window+pattern+dsa"
+      },
+      {
+        name: "Binary Search",
+        link: "https://www.youtube.com/results?search_query=binary+search+algorithm+full+course"
+      },
+      {
+        name: "Recursion & Backtracking",
+        link: "https://www.youtube.com/results?search_query=recursion+backtracking+dsa"
+      },
+      {
+        name: "Linked List, Stack, Queue",
+        link: "https://www.youtube.com/results?search_query=linked+list+stack+queue+dsa"
+      },
+      {
+        name: "Dynamic Programming",
+        link: "https://www.youtube.com/results?search_query=dynamic+programming+dsa+full+course"
+      }
+    ],
 
-  // 🚀 TECHNOLOGIES
-  const technologies = [
-    {
-      name: "Artificial Intelligence (AI)",
-      link: "https://www.youtube.com/results?search_query=generative+ai+gpt+gemini+explained"
-    },
-    {
-      name: "Machine Learning",
-      link: "https://www.youtube.com/results?search_query=machine+learning+scikit+learn+full+course"
-    },
-    {
-      name: "Deep Learning",
-      link: "https://www.youtube.com/results?search_query=pytorch+deep+learning+full+course"
-    },
-    {
-      name: "Cloud Computing",
-      link: "https://www.youtube.com/results?search_query=aws+azure+gcp+full+course"
-    },
-    {
-      name: "Programming Languages",
-      link: "https://www.youtube.com/results?search_query=python+java+c+full+course"
-    },
-    {
-      name: "Mobile Development",
-      link: "https://www.youtube.com/results?search_query=flutter+kotlin+full+course"
-    },
-    {
-      name: "DevOps",
-      link: "https://www.youtube.com/results?search_query=docker+kubernetes+devops+full+course"
-    },
-    {
-      name: "Databases",
-      link: "https://www.youtube.com/results?search_query=postgresql+mongodb+full+course"
-    },
-    {
-      name: "Version Control",
-      link: "https://www.youtube.com/results?search_query=git+github+full+course"
-    }
-  ];
+    "Core Subjects": [
+      {
+        name: "Operating Systems",
+        link: "https://www.youtube.com/results?search_query=operating+system+full+course"
+      },
+      {
+        name: "DBMS",
+        link: "https://www.youtube.com/results?search_query=dbms+sql+normalization+full+course"
+      },
+      {
+        name: "Computer Networks",
+        link: "https://www.youtube.com/results?search_query=computer+networks+full+course"
+      },
+      {
+        name: "OOP Concepts",
+        link: "https://www.youtube.com/results?search_query=oop+concepts+java+cpp+full+course"
+      }
+    ],
 
-  // 🎤 MOCK INTERVIEW
-  const mockInterview = [
-    {
-      name: "Self Introduction Practice",
-      link: "https://www.youtube.com/results?search_query=how+to+introduce+yourself+in+interview"
-    },
-    {
-      name: "DSA Problem Solving",
-      link: "https://www.youtube.com/results?search_query=dsa+interview+questions+practice"
-    },
-    {
-      name: "HR Questions",
-      link: "https://www.youtube.com/results?search_query=hr+interview+questions+answers"
-    },
-    {
-      name: "System Design Basics",
-      link: "https://www.youtube.com/results?search_query=system+design+basics"
-    },
-    {
-      name: "Project Explanation",
-      link: "https://www.youtube.com/results?search_query=how+to+explain+project+in+interview"
-    }
-  ];
+    "AI Tools": [
+      {
+        name: "ChatGPT / Gemini API",
+        link: "https://www.youtube.com/results?search_query=gemini+api+chatgpt+api+tutorial"
+      },
+      {
+        name: "Hugging Face",
+        link: "https://www.youtube.com/results?search_query=huggingface+transformers+tutorial"
+      },
+      {
+        name: "GitHub Copilot",
+        link: "https://www.youtube.com/results?search_query=github+copilot+tutorial"
+      }
+    ],
 
-  // 🔥 reusable UI
-  const renderList = (items) => (
-    <ul className="list-disc ml-6 mt-2">
-      {items.map((item) => (
-        <li
-          key={item.name}
-          className="cursor-pointer text-blue-400 hover:underline"
-          onClick={() => window.open(item.link, "_blank")}
-        >
-          {item.name}
-        </li>
-      ))}
-    </ul>
-  );
+    Technologies: [
+      {
+        name: "Artificial Intelligence",
+        link: "https://www.youtube.com/results?search_query=generative+ai+gpt+gemini+explained"
+      },
+      {
+        name: "Machine Learning",
+        link: "https://www.youtube.com/results?search_query=machine+learning+full+course"
+      },
+      {
+        name: "Cloud Computing",
+        link: "https://www.youtube.com/results?search_query=aws+azure+gcp+full+course"
+      },
+      {
+        name: "DevOps",
+        link: "https://www.youtube.com/results?search_query=docker+kubernetes+devops+full+course"
+      }
+    ],
+
+    "Mock Interview": [
+      {
+        name: "Self Introduction",
+        link: "https://www.youtube.com/results?search_query=how+to+introduce+yourself+in+interview"
+      },
+      {
+        name: "DSA Interview Questions",
+        link: "https://www.youtube.com/results?search_query=dsa+interview+questions+practice"
+      },
+      {
+        name: "HR Questions",
+        link: "https://www.youtube.com/results?search_query=hr+interview+questions+answers"
+      }
+    ]
+  };
+
+  // 🔥 RENDER FUNCTION (HANDLES BOTH SIMPLE + NESTED)
+  const renderList = (data) => {
+
+    // if nested (Aptitude)
+    if (!Array.isArray(data)) {
+      return Object.entries(data).map(([sub, items]) => (
+        <div key={sub} className="mt-4">
+          <h4 className="text-yellow-300 font-semibold">
+            {sub}
+          </h4>
+
+          <ul className="list-disc ml-6 mt-2 space-y-1">
+            {items.map((item) => (
+              <li
+                key={item.name}
+                className="cursor-pointer text-blue-400 hover:underline"
+                onClick={() => window.open(item.link, "_blank")}
+              >
+                {item.name}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ));
+    }
+
+    // normal sections
+    return (
+      <ul className="list-disc ml-6 mt-2 space-y-1">
+        {data.map((item) => (
+          <li
+            key={item.name}
+            className="cursor-pointer text-blue-400 hover:underline"
+            onClick={() => window.open(item.link, "_blank")}
+          >
+            {item.name}
+          </li>
+        ))}
+      </ul>
+    );
+  };
 
   return (
     <div className="text-white p-4">
@@ -178,41 +226,17 @@ export default function PlacementPlan() {
         Placement Preparation Roadmap
       </h2>
 
-      {/* APTITUDE */}
-      <div className="bg-gray-700 p-4 rounded mb-4">
-        <h3 className="text-xl font-bold">Aptitude</h3>
-        {renderList(aptitudeTopics)}
-      </div>
+      {Object.entries(roadmap).map(([section, data]) => (
+        <div key={section} className="bg-gray-700 p-4 rounded mb-4">
 
-      {/* DSA */}
-      <div className="bg-gray-700 p-4 rounded mb-4">
-        <h3 className="text-xl font-bold">DSA</h3>
-        {renderList(dsaTopics)}
-      </div>
+          <h3 className="text-xl font-bold mb-2">
+            {section}
+          </h3>
 
-      {/* CORE */}
-      <div className="bg-gray-700 p-4 rounded mb-4">
-        <h3 className="text-xl font-bold">Core Subjects</h3>
-        {renderList(coreSubjects)}
-      </div>
+          {renderList(data)}
 
-      {/* AI TOOLS */}
-      <div className="bg-gray-700 p-4 rounded mb-4">
-        <h3 className="text-xl font-bold">AI Tools</h3>
-        {renderList(aiTools)}
-      </div>
-
-      {/* TECHNOLOGIES */}
-      <div className="bg-gray-700 p-4 rounded mb-4">
-        <h3 className="text-xl font-bold">Technologies & Trends</h3>
-        {renderList(technologies)}
-      </div>
-
-      {/* MOCK INTERVIEW */}
-      <div className="bg-gray-700 p-4 rounded mb-4">
-        <h3 className="text-xl font-bold">Mock Interview</h3>
-        {renderList(mockInterview)}
-      </div>
+        </div>
+      ))}
 
     </div>
   );

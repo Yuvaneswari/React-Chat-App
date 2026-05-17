@@ -1,140 +1,118 @@
 export default function DSAHelp() {
+
+
+  const roadmap = [
+    {
+      title: "What is DSA?",
+      description:
+        "DSA (Data Structures & Algorithms) is the foundation of programming interviews and efficient problem solving.",
+      points: [
+        "Data Structure = Organizing data efficiently",
+        "Algorithm = Step-by-step problem solving method",
+        "Used in real systems like Google, Amazon, etc."
+      ]
+    },
+
+    {
+      title: "Time & Space Complexity",
+      description:
+        "Used to measure how fast and efficient your code is.",
+      points: [
+        "O(1) → constant time (fastest)",
+        "O(log n) → binary search type problems",
+        "O(n) → single loop",
+        "O(n²) → nested loops (avoid if possible)",
+        "Space complexity = memory usage"
+      ]
+    },
+
+    {
+      title: "Core Data Structures",
+      points: [
+        "Arrays → fixed size, fast access",
+        "Strings → character manipulation",
+        "Linked List → dynamic memory",
+        "Stack → LIFO (undo, recursion)",
+        "Queue → FIFO (scheduling)",
+        "Tree → hierarchical structure",
+        "Graph → network problems",
+        "Heap → priority handling",
+        "HashMap → fast lookup"
+      ]
+    },
+
+    {
+      title: "Important DSA Patterns",
+      points: [
+        "Two Pointer → sorted arrays, pair problems",
+        "Sliding Window → substring / subarray optimization",
+        "Binary Search → sorted search & optimization",
+        "Recursion → tree, backtracking problems",
+        "Backtracking → permutations, subsets",
+        "Greedy → local optimal choice",
+        "Dynamic Programming → overlapping subproblems",
+        "Graph BFS/DFS → traversal problems"
+      ]
+    },
+
+    {
+      title: "Interview Problem Types",
+      points: [
+        "Array manipulation (Two Sum, Kadane’s Algorithm)",
+        "String problems (palindrome, anagram)",
+        "Linked List problems (reverse, cycle detection)",
+        "Tree problems (traversals, LCA)",
+        "Graph problems (shortest path, components)",
+        "DP problems (knapsack, LIS)",
+        "Stack problems (valid parentheses, monotonic stack)"
+      ]
+    },
+
+    {
+      title: "How to Study DSA (Roadmap)",
+      points: [
+        "Step 1: Learn basics (arrays, loops)",
+        "Step 2: Learn patterns (two pointer, sliding window)",
+        "Step 3: Solve easy LeetCode problems",
+        "Step 4: Move to medium level problems",
+        "Step 5: Practice daily (consistency > speed)",
+        "Step 6: Revise patterns weekly"
+      ]
+    }
+  ];
+
   return (
-    <div className="space-y-6">
+    <div className="p-4 bg-gray-900 text-white space-y-6">
 
       {/* HEADER */}
-      <h1 className="text-2xl font-bold">DSA Roadmap</h1>
+      <h1 className="text-3xl font-bold">
+         Complete DSA Roadmap
+      </h1>
 
-      {/* BASICS */}
-      <section className="p-4 bg-gray-800 rounded">
-        <h2 className="text-xl font-semibold"></h2>
+      {/* 🔥 DYNAMIC RENDER */}
+      {roadmap.map((section, i) => (
+        <div
+          key={i}
+          className="bg-gray-800 p-4 rounded shadow"
+        >
+          <h2 className="text-xl font-semibold mb-2">
+            {section.title}
+          </h2>
 
-        <p className="text-white-700 mt-2">
-  <b>DSA</b> (Data Structures & Algorithms) is a core skill in computer science that helps build efficient, scalable, and optimized solutions for real-world and interview problems.
-      </p>
-      </section>
+          {section.description && (
+            <p className="text-gray-300 mb-2">
+              {section.description}
+            </p>
+          )}
 
-
-      <section className="p-4 bg-gray-800 rounded">
-        <h2 className="text-xl font-semibold">Time Complexity</h2>
-
-        <ul className="list-disc ml-6 mt-2">
-          <li>O(1) → constant</li>
-          <li>O(n) → single loop</li>
-          <li>O(n²) → nested loops</li>
-          <li>O(log n) → binary search</li>
-        </ul>
-      </section>
-
-
-   <section className="p-4 bg-gray-800 rounded">
-        <h2 className="text-xl font-semibold">Topics</h2>
-
-        <div className="grid grid-cols-1 gap-2 mt-2">
-          <div>Arrays</div>
-          <div>Strings</div>
-          <div>Linked List</div>
-          <div>Stack</div>
-          <div>Queue</div>
-          <div>Tree</div>
-          <div>Graph</div>
-          <div>DP</div>
+          <ul className="list-disc ml-6 space-y-1 text-gray-300">
+            {section.points.map((p, idx) => (
+              <li key={idx}>{p}</li>
+            ))}
+          </ul>
         </div>
-      </section>
+      ))}
 
-      {/* PATTERNS */}
-      <section className="p-4 bg-gray-800 rounded">
-        <h2 className="text-xl font-semibold"> Important Patterns</h2>
-
-        <ul className="list-disc ml-6 mt-2 space-y-2">
-          <li><b>Sliding Window</b> → substring, subarray problems</li>
-          <li><b>Two Pointer</b> → sorted arrays, pair sum</li>
-          <li><b>Binary Search</b> → search problems, optimization</li>
-          <li><b>Recursion</b> → tree, backtracking</li>
-          <li><b>DP</b> → optimization problems</li>
-          <li><b>Graph BFS/DFS</b> → traversal problems</li>
-        </ul>
-      </section>
-
-
-      {/* PROBLEMS */}
-      <section className="p-4 bg-gray-800 rounded">
-       {/* PRACTICE PATTERNS */}
-<section className="p-4 bg-gray-800 rounded">
-
-  <h2 className="text-xl font-semibold mb-3">
-     Practice Patterns
-  </h2>
-
-  <ul className="space-y-2 text-sm">
-
-    <li>
-      <b>1. Two Pointer Pattern</b>
-      <p className="opacity-80">
-        Used in sorted arrays, pair sum, removing duplicates
-      </p>
-    </li>
-
-    <li>
-      <b>2. Sliding Window Pattern</b>
-      <p className="opacity-80">
-        Used in subarray problems, max/min window problems
-      </p>
-    </li>
-
-    <li>
-      <b>3. Binary Search Pattern</b>
-      <p className="opacity-80">
-        Used in sorted search, rotated arrays, optimization problems
-      </p>
-    </li>
-
-    <li>
-      <b>4. Recursion Pattern</b>
-      <p className="opacity-80">
-        Used in tree problems, factorial, fibonacci, decision trees
-      </p>
-    </li>
-
-    <li>
-      <b>5. Backtracking Pattern</b>
-      <p className="opacity-80">
-        Used in permutations, subsets, N-Queens, maze problems
-      </p>
-    </li>
-
-    <li>
-      <b>6. Hashing Pattern</b>
-      <p className="opacity-80">
-        Used in Two Sum, frequency counting, duplicates
-      </p>
-    </li>
-
-    <li>
-      <b>7. Stack Pattern</b>
-      <p className="opacity-80">
-        Used in parentheses, expression evaluation, monotonic stack
-      </p>
-    </li>
-
-    <li>
-      <b>8. Graph Pattern (BFS/DFS)</b>
-      <p className="opacity-80">
-        Used in traversal, shortest path, connected components
-      </p>
-    </li>
-
-    <li>
-      <b>9. Dynamic Programming Pattern</b>
-      <p className="opacity-80">
-        Used in optimization problems like knapsack, LIS, fibonacci
-      </p>
-    </li>
-
-  </ul>
-
-</section>
-      </section>
     </div>
   );
 }
