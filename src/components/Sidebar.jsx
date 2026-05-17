@@ -16,6 +16,7 @@ export default function Sidebar({
   const filteredChats = chats.filter((chat) =>
     chat.title.toLowerCase().includes(search.toLowerCase())
   );
+  console.log("FORCE TEST CHANGE");
 
   return (
     <>
